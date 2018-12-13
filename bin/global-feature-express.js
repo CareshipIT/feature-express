@@ -7,15 +7,16 @@ const localeHandler = require("../lib/locale-handler");
 
 const app = express();
 
-const featurebookEndPoint = "/";
+const basePath = process.env.APP_BASE_URL || ""
+const featurebookEndPoint = process.env.FEATURE_BOOK_ENDPOINT || "/";
 const envPath = process.argv[2] || "./";
 const language = localeHandler.getValidLanguage(process.argv[3] || process.env.LANG);
 const port = process.argv[4] || process.env.PORT || 3000;
 const jiraUrlBase = process.argv[5] || null;
 const boardAcronym = process.argv[6] || null;
 
-app.use(express.static(path.join(__dirname, "..", "assets")));
-app.use('/js/locales.js', express.static(path.join(__dirname, "..", "lib", "locales.js")));
+app.use(basePath, express.static(path.join(__dirname, "..", "assets")));
+app.use(basePath + '/js/locales.js', express.static(path.join(__dirname, "..", "lib", "locales.js")));
 
 app.set("views", path.join(__dirname, "..", "views"));
 app.engine("html", require("ejs").renderFile);
@@ -33,7 +34,8 @@ app.get(featurebookEndPoint, (req, res) =>
               contentFeature,
               language,
               jiraUrlBase,
-              boardAcronym
+              boardAcronym,
+              basePath
             })
     )
 );

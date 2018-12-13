@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<%- basePath %>/css/style.css">
       <% var bddLanguage = language;%>
       <% var boardUrlBase = jiraUrlBase;%>
       <% var acronym = boardAcronym;%>
@@ -20,14 +20,14 @@
       var acronymId = <%- JSON.stringify(acronym)  %>;
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="js/html-keywords.js"></script>
-    <script src="js/locales.js"></script>
+    <script src="<%- basePath %>/js/html-keywords.js"></script>
+    <script src="<%- basePath %>/js/locales.js"></script>
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="images/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="<%- basePath %>/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%- basePath %>/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%- basePath %>/images/favicon-16x16.png">
+    <link rel="manifest" href="<%- basePath %>/images/site.webmanifest">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
@@ -43,7 +43,7 @@
 
           <div class="sidebar-sticky">
             <header class="cs-header">
-              <figure class="cs-header__brand"><img src="images/logo.svg" alt="" class="img-responsive"></figure>
+              <figure class="cs-header__brand"><img src="<%- basePath %>/images/logo.svg" alt="" class="img-responsive"></figure>
             </header>
 
             <div class="list-group" id="myList" role="tablist">
